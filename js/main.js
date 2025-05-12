@@ -18,33 +18,37 @@ $('.close').on('click', function (e) {
     $('.open').animate({ left: `-${sideWidth}px` }, 500)
 })
 
+const height=$('#duration').offset().top;
+console.log(height)
+$(window).on('scroll',function(){
+    if($(window).scrollTop()> height){
+        $('.open').addClass('d-none')
+    }else{
+        $('.open').removeClass('d-none')
+    }
+})
 
-var home=$('#home').offset().top
-var dur=$('#duration').offset().top
-var det=$('#details').offset().top
-// console.log(det)
-var cont=$('#contact').offset().top
-// console.log(cont)
+
 
     $('#l1').on('click',function(e){
         e.preventDefault()
-        $('html').animate({scrollTop:`${home}`},1000)
+        $('html').animate({scrollTop:$('#home').offset().top},1000)
     })
 
     $('#l2').on('click',function(e){
         e.preventDefault()
-        $('html').animate({scrollTop:`${dur}`},1000)
+        $('html').animate({scrollTop:$('#duration').offset().top},1000)
 
     })
 
     $('#l3').on('click',function(e){
         e.preventDefault()
-        $('html').animate({scrollTop:`${det}`},1000)
+        $('html').animate({scrollTop:$('#details').offset().top},1000)
     })
 
     $('#l4').on('click',function(e){
         e.preventDefault()
-        $('html').animate({scrollTop:`${cont}`},1000)
+        $('html').animate({scrollTop:$('#contact').offset().top},1000)
     })
 
 /*************End Header******************** */
